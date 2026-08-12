@@ -6,11 +6,17 @@ body.js-menuOpened {
 
 #header {
     width: 100%;
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-xs) 0;
     position: fixed;
     top: 0;
     z-index: 99;
     background-color: var(--white);
+}
+
+@media screen and (min-width: 1200px) {
+    #header {
+        padding: 0;
+    }
 }
 
 .admin-bar #header {
@@ -22,7 +28,13 @@ body.js-menuOpened {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-sm);
+}
+
+@media screen and (min-width: 1200px) {
+    #header .inner-header {
+        min-height: 100px;
+    }
 }
 
 #header .custom-logo {
@@ -42,7 +54,7 @@ body.js-menuOpened {
 #header .nav-wrapper {
     width: 100%;
     height: calc(var(--viewport-height, 100vh) - var(--header-height));
-    padding: var(--spacing-xl);
+    padding: var(--spacing-sm);
     position: fixed;
     top: var(--header-height);
     right: 0;
@@ -53,6 +65,18 @@ body.js-menuOpened {
     transition: transform var(--transition-timing) var(--transition-duration);
 }
 
+@media screen and (min-width: 1200px) {
+    #header .nav-wrapper {
+        width: unset;
+        height: auto;
+        padding: 0;
+        position: static;
+        margin-left: auto;
+        overflow: visible;
+        transform: none;
+    }
+}
+
 .js-menuOpened #header .nav-wrapper {
     transform: translateX(0);
 }
@@ -60,7 +84,14 @@ body.js-menuOpened {
 .menu-header {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-sm);
+}
+
+@media screen and (min-width: 1200px) {
+    .menu-header {
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 .menu-header a {
@@ -71,6 +102,12 @@ body.js-menuOpened {
 
 .menu-toggle-col {
     display: block;
+}
+
+@media screen and (min-width: 1200px) {
+    .menu-toggle-col {
+        display: none;
+    }
 }
 
 .menu-toggle-wrapper {
@@ -130,33 +167,4 @@ body.js-menuOpened {
 .js-menuOpened .menu-toggle-open:after {
     top: 0;
     transform: rotate(-45deg);
-}
-
-@media screen and (min-width: 1200px) {
-    #header {
-        padding: 0;
-    }
-
-    #header .inner-header {
-        min-height: 100px;
-    }
-
-    #header .nav-wrapper {
-        width: unset;
-        height: auto;
-        padding: 0;
-        position: static;
-        margin-left: auto;
-        overflow: visible;
-        transform: none;
-    }
-
-    .menu-header {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .menu-toggle-col {
-        display: none;
-    }
 }

@@ -39,7 +39,8 @@ function vox_setup_theme()
     register_nav_menus(
         array(
             'header-menu' => __('Header', 'vox-aedificatoris'),
-            'footer-submenu' => __('Footer submenu', 'vox-aedificatoris'),
+            'menu-footer-1' => __('Footer #1', 'vox-aedificatoris'),
+            'menu-footer-2' => __('Footer #2', 'vox-aedificatoris'),
         )
     );
 }

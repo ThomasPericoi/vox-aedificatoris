@@ -3,11 +3,16 @@
 :root {
     /* Colors */
     --black: #111212;
-    --white: #ffffff;
-    --silver: #d9d9d9;
+    --white: #FFFFFF;
 
-    --primary: var(--black);
-    --secondary: var(--black);
+    --dove: #666666;
+    --hippie: #4DA19A;
+    --hippie-80: #70B4AE;
+    --hippie-50: #A6D0CD;
+    --hippie-30: #C9E3E1;
+    --hippie-16: #E3F0EF;
+
+    --primary: var(--hippie);
     --content-color: var(--black);
     --accent-content-color: var(--primary);
 
@@ -22,15 +27,14 @@
     --header-height: 87px;
     --container-padding: 2rem;
 
-    --spacing-2xs: 0.25rem;
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 0.75rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
+    --spacing-xxs: 0.5rem;
+    --spacing-xs: 1rem;
+    --spacing-sm: 1.5rem;
+    --spacing-md: 3.75rem;
+    --spacing-lg: 6.25rem;
 
-    --spacing-section-inner: 3rem;
-    --spacing-section-outer: 4rem;
+    --spacing-section-inner: var(--spacing-md);
+    --spacing-section-outer: var(--spacing-lg);
     --content-spacing: 2.25em;
 
     /* Motion */
@@ -38,8 +42,8 @@
     --transition-timing: ease;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     :root {
-        --spacing-section-outer: 6rem;
+        --spacing-lg: 10rem;
     }
 }

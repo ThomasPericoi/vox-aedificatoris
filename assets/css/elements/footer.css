@@ -1,16 +1,112 @@
 /* #Footer
 --------------------------------------------------------------- */
 #footer {
-    padding-block: var(--spacing-xl);
+    --content-color: var(--white);
+
     position: relative;
+    color: var(--white);
+    background-color: var(--black);
 }
 
 #footer a {
     color: inherit;
 }
 
-.menu-footer {
+/* Main Footer */
+#main-footer {
+    padding-block: var(--spacing-md);
+    font-size: 0.875rem;
+}
+
+#main-footer .footer-content {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--spacing-md);
+}
+
+@media screen and (min-width: 768px) {
+    #main-footer .footer-content {
+        grid-template-columns: minmax(0, 2fr) minmax(8rem, 0.7fr) minmax(10rem, 1fr);
+        align-items: start;
+    }
+}
+
+#main-footer .footer-identity {
+    grid-column: 1 / -1;
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm) var(--spacing-lg);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+@media screen and (min-width: 768px) {
+    #main-footer .footer-identity {
+        grid-column: auto;
+    }
+}
+
+#main-footer .footer-logo {
+    width: min(100%, 285px);
+    display: block;
+}
+
+#main-footer .footer-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#main-footer .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: inherit;
+    font-style: normal;
+    line-height: 1.6;
+}
+
+#main-footer .footer-contact a,
+#main-footer .menu-footer a {
+    text-underline-offset: 0.15em;
+}
+
+#main-footer .footer-title {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+#main-footer .menu-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xxs);
+}
+
+#main-footer .menu-footer li {
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+#main-footer .menu-footer a {
+    text-decoration: none;
+}
+
+#main-footer .menu-footer a:hover,
+#main-footer .menu-footer a:focus-visible {
+    text-decoration: underline;
+}
+
+#main-footer .footer-copyright {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-xs);
+    color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#main-footer .footer-copyright p {
+    font-size: inherit;
+    line-height: 1.5;
 }
