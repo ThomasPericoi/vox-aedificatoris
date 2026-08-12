@@ -1,0 +1,48 @@
+<?php
+$labels = [
+    'name' => __('Réalisations', 'vox-aedificatoris'),
+    'singular_name' => __('Réalisation', 'vox-aedificatoris'),
+    'menu_name' => __('Réalisations', 'vox-aedificatoris'),
+    'add_new' => __('Ajouter', 'vox-aedificatoris'),
+    'add_new_item' => __('Ajouter une réalisation', 'vox-aedificatoris'),
+    'edit_item' => __('Modifier la réalisation', 'vox-aedificatoris'),
+    'new_item' => __('Nouvelle réalisation', 'vox-aedificatoris'),
+    'view_item' => __('Voir la réalisation', 'vox-aedificatoris'),
+    'view_items' => __('Voir les réalisations', 'vox-aedificatoris'),
+    'search_items' => __('Rechercher des réalisations', 'vox-aedificatoris'),
+    'not_found' => __('Aucune réalisation trouvée.', 'vox-aedificatoris'),
+    'not_found_in_trash' => __('Aucune réalisation dans la corbeille.', 'vox-aedificatoris'),
+    'all_items' => __('Toutes les réalisations', 'vox-aedificatoris'),
+    'archives' => __('Archives des réalisations', 'vox-aedificatoris'),
+    'featured_image' => __('Image principale', 'vox-aedificatoris'),
+    'set_featured_image' => __('Définir l’image principale', 'vox-aedificatoris'),
+    'remove_featured_image' => __('Retirer l’image principale', 'vox-aedificatoris'),
+];
+
+register_post_type('realisation', [
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_rest' => true,
+    'query_var' => true,
+    'hierarchical' => false,
+    'capability_type' => 'post',
+    'supports' => [
+        'title',
+        'editor',
+        'thumbnail',
+        'excerpt',
+        'revisions',
+        'page-attributes',
+    ],
+    'taxonomies' => [],
+    'has_archive' => 'realisations',
+    'rewrite' => [
+        'slug' => 'realisations',
+        'with_front' => false,
+    ],
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-portfolio',
+]);

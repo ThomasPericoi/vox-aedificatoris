@@ -1,0 +1,33 @@
+/* #Buttons
+--------------------------------------------------------------- */
+.btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.btn {
+    min-height: 45px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-family: var(--body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: color var(--transition-timing) var(--transition-duration), background-color var(--transition-timing) var(--transition-duration);
+}
+
+.btn:hover,
+.btn:focus-visible {
+    color: var(--primary);
+    background-color: var(--white);
+}

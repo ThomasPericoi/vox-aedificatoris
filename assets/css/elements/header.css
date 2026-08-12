@@ -1,0 +1,162 @@
+/* #Header
+--------------------------------------------------------------- */
+body.js-menuOpened {
+    overflow: hidden;
+}
+
+#header {
+    width: 100%;
+    padding: var(--spacing-md) 0;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background-color: var(--white);
+}
+
+.admin-bar #header {
+    top: var(--admin-bar-visible-height, var(--wp-admin--admin-bar--height, 32px));
+}
+
+#header .inner-header {
+    min-height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+#header .custom-logo {
+    width: auto;
+    max-width: 220px;
+    max-height: 55px;
+    display: block;
+}
+
+#header .logo-link {
+    color: var(--content-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#header .nav-wrapper {
+    width: 100%;
+    height: calc(var(--viewport-height, 100vh) - var(--header-height));
+    padding: var(--spacing-xl);
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    z-index: 25;
+    overflow-y: auto;
+    background-color: var(--white);
+    transform: translateX(100%);
+    transition: transform var(--transition-timing) var(--transition-duration);
+}
+
+.js-menuOpened #header .nav-wrapper {
+    transform: translateX(0);
+}
+
+.menu-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.menu-header a {
+    color: var(--content-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu-toggle-col {
+    display: block;
+}
+
+.menu-toggle-wrapper {
+    width: 30px;
+    height: 24px;
+    position: relative;
+}
+
+.menu-toggle {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.menu-toggle-open,
+.menu-toggle-open:before,
+.menu-toggle-open:after,
+.menu-toggle-open span {
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    background-color: var(--content-color);
+    transition: transform var(--transition-timing) var(--transition-duration), opacity var(--transition-timing) var(--transition-duration);
+}
+
+.menu-toggle-open {
+    top: 11px;
+}
+
+.menu-toggle-open:before,
+.menu-toggle-open:after {
+    content: "";
+}
+
+.menu-toggle-open:before {
+    top: -9px;
+}
+
+.menu-toggle-open:after {
+    top: 9px;
+}
+
+.js-menuOpened .menu-toggle-open {
+    background-color: transparent;
+}
+
+.js-menuOpened .menu-toggle-open:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.js-menuOpened .menu-toggle-open:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 1200px) {
+    #header {
+        padding: 0;
+    }
+
+    #header .inner-header {
+        min-height: 100px;
+    }
+
+    #header .nav-wrapper {
+        width: unset;
+        height: auto;
+        padding: 0;
+        position: static;
+        margin-left: auto;
+        overflow: visible;
+        transform: none;
+    }
+
+    .menu-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu-toggle-col {
+        display: none;
+    }
+}

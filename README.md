@@ -1,55 +1,67 @@
 # Vox Aedificatoris
 
-Named after the iconic Daft Punk track, **Vox Aedificatoris** is a custom WordPress theme developed for **VOX**, a copy-writer specialised in the construction.
+Named after the iconic Daft Punk track, **Vox Aedificatoris** is a custom WordPress theme developed for **VOX**, a copywriter specialised in the construction industry.
 
-The theme was designed to provide a flexible and intuitive content management experience while delivering a modern, responsive, and performant front-end for visitors.
+The theme provides a maintainable technical foundation with intentionally neutral templates and styles, ready for the VOX visual identity.
 
 ## Features
 
 * Custom WordPress theme built from scratch
-* Advanced Custom Fields (ACF) integration
-* Flexible content management for non-technical users
-* Responsive design for mobile, tablet, and desktop
-* Custom page templates
-* Reusable content components
-* Optimized asset loading
-* SEO-friendly markup
-* Accessibility-conscious implementation
+* Advanced Custom Fields (ACF) integration and local JSON
+* Custom "Réalisations" post type
+* ACF block architecture
+* Responsive and accessible navigation baseline
+* Modular CSS architecture
+* Progressive and accessible JavaScript enhancements
+* Manrope typography from Google Fonts
+* Optimized asset loading and cache busting
+* SEO-friendly and accessibility-conscious markup
 
-## Technologies
+## Architecture
 
-* WordPress
-* PHP
-* Advanced Custom Fields (ACF)
-* JavaScript
-* CSS
-* HTML5
+### CSS
 
-## Project Goals
+* `assets/css/inc`: reset and WordPress core compatibility
+* `assets/css/base`: imports, variables, animations, typography and formatted content
+* `assets/css/elements`: reusable layout and interface elements
+* `assets/css/blocks`: ACF block styles
+* `assets/css/template-parts`: reusable PHP component styles
+* `assets/css/templates`: custom page template styles
+* `assets/css/pages`: WordPress template styles
 
-The primary objective of this theme was to create a maintainable and scalable website tailored to VOX's needs, allowing the owner to easily update content sections without requiring technical knowledge.
+Every CSS module is imported from `style.css`. The stylesheet version uses the newest CSS file timestamp, so editing an imported file invalidates the browser cache automatically.
 
-## Development
+### JavaScript
 
-### Requirements
+`assets/js/main.js` contains the global theme behaviours:
 
-* WordPress 6.x
-* PHP 8.x
+* responsive menu and accessible hidden states
+* viewport, header and admin bar CSS variables
+* reduced-motion aware section reveals
+* ordered list start preservation
+* theme signature
+
+Feature-specific behaviour should remain isolated in dedicated initializer functions.
+
+### PHP
+
+* `inc`: theme configuration and integrations
+* `inc/acf-json`: versioned ACF field groups
+* `inc/blocks`: future ACF blocks
+* `inc/post-types`: custom post type declarations
+* `template-parts`: reusable front-end components
+
+## Requirements
+
+* WordPress 6.5 or later
+* PHP 8.1 or later
 * Advanced Custom Fields Pro
-
-### Installation
-
-1. Clone the repository into the WordPress themes directory.
-2. Activate the theme from the WordPress administration panel.
-3. Install and activate the required ACF plugin.
-4. Import the field groups if necessary.
-5. Configure theme options and content.
 
 ## Repository Notes
 
 This repository contains the theme source code only.
 
-Client content, media assets, credentials, and third-party proprietary resources have been intentionally excluded.
+Client content, media, credentials and third-party proprietary resources are intentionally excluded.
 
 ## License
 

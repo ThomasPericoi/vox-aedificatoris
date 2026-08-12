@@ -1,0 +1,38 @@
+/* #Forms
+--------------------------------------------------------------- */
+label {
+    display: block;
+    font-weight: 600;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: var(--spacing-md);
+    color: var(--content-color);
+    background-color: var(--white);
+    border: 1px solid var(--silver);
+    border-radius: var(--border-radius);
+}
+
+textarea {
+    min-height: 10rem;
+    resize: vertical;
+}
+
+.wpcf7-list-item {
+    margin: 0;
+}

@@ -1,0 +1,16 @@
+/* #Footer
+--------------------------------------------------------------- */
+#footer {
+    padding-block: var(--spacing-xl);
+    position: relative;
+}
+
+#footer a {
+    color: inherit;
+}
+
+.menu-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm) var(--spacing-lg);
+}
