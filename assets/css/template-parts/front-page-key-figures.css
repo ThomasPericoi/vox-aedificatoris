@@ -1,0 +1,64 @@
+/* #Front Page Key Figures
+--------------------------------------------------------------- */
+.key-figures {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+.key-figures-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-sm) var(--spacing-xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media screen and (min-width: 992px) {
+    .key-figures-list {
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        gap: var(--spacing-md) 0;
+    }
+}
+
+.key-figure {
+    min-width: 0;
+    padding-left: var(--spacing-xxs);
+    border-left: 1px solid currentColor;
+}
+
+@media screen and (min-width: 992px) {
+    .key-figure {
+        padding-left: 1rem;
+    }
+}
+
+.key-figure-value,
+.key-figure-label {
+    display: block;
+}
+
+.key-figure-value {
+    font-family: var(--bold);
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+@media screen and (min-width: 992px) {
+    .key-figure-value {
+        font-size: 4rem;
+    }
+}
+
+.key-figure-label {
+    margin-top: var(--spacing-xxs);
+    font-size: 0.75rem;
+    line-height: 1.35;
+}
+
+@media screen and (min-width: 992px) {
+    .key-figure-label {
+        font-size: 1rem;
+    }
+}

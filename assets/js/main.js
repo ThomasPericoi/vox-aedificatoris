@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (menuToggle) {
-            menuToggle.checked = opened;
             menuToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+            menuToggle.querySelector('.screen-reader-text').textContent = opened ? menuToggle.dataset.labelClose : menuToggle.dataset.labelOpen;
         }
 
         if (desktopQuery.matches) {

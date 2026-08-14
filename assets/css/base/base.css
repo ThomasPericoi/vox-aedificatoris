@@ -23,13 +23,13 @@ body {
     margin-top: var(--header-height);
 }
 
-#main > section {
+#main>section {
     padding-block: var(--spacing-section-outer);
     opacity: 1;
     translate: none;
 }
 
-.js-enabled #main > section:not(.js-alwaysInView) {
+.js-enabled #main>section:not(.js-alwaysInView) {
     opacity: 0;
     translate: 0 20px;
     transition: opacity calc(var(--transition-duration) * 2) ease-out, translate calc(var(--transition-duration) * 2) ease-out;
@@ -53,8 +53,18 @@ video {
 }
 
 :focus-visible {
-    outline: 2px dashed var(--primary);
+    outline: 2px dashed var(--content-color);
     outline-offset: 4px;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -71,7 +81,7 @@ video {
         transition-duration: 1ms !important;
     }
 
-    #main > section:not(.js-alwaysInView) {
+    #main>section:not(.js-alwaysInView) {
         opacity: 1;
         transition: none;
         translate: none;

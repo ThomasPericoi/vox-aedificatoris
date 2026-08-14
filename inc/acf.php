@@ -21,6 +21,7 @@ add_filter('acf/settings/load_json', 'vox_load_acf_groups_json');
 function vox_name_acf_groups_json($filename, $post, $load_path)
 {
     $filenames = array(
+        'group_page_front_page' => 'group_page_front_page',
         'group_theme_options_footer' => 'group_theme_options_footer',
     );
 

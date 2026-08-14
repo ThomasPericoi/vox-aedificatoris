@@ -11,54 +11,73 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "left",
             "endpoint": 0,
             "selected": 0
         },
         {
             "key": "field_vox_footer_name",
-            "label": "Name",
+            "label": "Nom",
             "name": "footer_name",
             "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "33", "class": "", "id": "" },
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
         },
         {
             "key": "field_vox_footer_email",
-            "label": "Email",
+            "label": "E-mail",
             "name": "footer_email",
             "aria-label": "",
             "type": "email",
-            "instructions": "",
+            "instructions": "Doit être une adresse email valide. Il sera cliquable.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "33", "class": "", "id": "" },
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
         },
         {
             "key": "field_vox_footer_phone",
-            "label": "Phone",
+            "label": "Numéro de téléphone",
             "name": "footer_phone",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Doit être un numéro valide. Il sera cliquable.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "34", "class": "", "id": "" },
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -72,23 +91,32 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "left",
             "endpoint": 0,
             "selected": 0
         },
         {
             "key": "field_vox_footer_copyright",
-            "label": "Copyright",
+            "label": "Texte du copyright",
             "name": "footer_copyright",
             "aria-label": "",
             "type": "text",
-            "instructions": "The current year is added automatically.",
+            "instructions": "L'année en cours est ajoutée automatiquement.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -112,5 +140,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786543200
+    "display_title": "Options du pied de page",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1786700797
 }
