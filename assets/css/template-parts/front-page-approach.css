@@ -1,0 +1,99 @@
+/* #Front Page Approach
+--------------------------------------------------------------- */
+.front-page-approach-header {
+    display: grid;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-approach-header {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+        align-items: end;
+        gap: var(--spacing-lg);
+    }
+}
+
+.front-page-approach-heading h2 {
+    max-width: 28rem;
+    margin: var(--spacing-xs) 0 0;
+}
+
+.front-page-approach-introduction {
+    --content-spacing: var(--spacing-xs);
+}
+
+.front-page-approach-steps {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: approach-step;
+}
+
+@media screen and (min-width: 768px) {
+    .front-page-approach-steps {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: var(--spacing-xs);
+    }
+}
+
+.front-page-approach-step {
+    display: flex;
+    flex-direction: column;
+    padding: 2.25rem;
+    color: var(--dove);
+    background-color: var(--wild-sand);
+    border-radius: 0.625rem;
+    counter-increment: approach-step;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-approach-step {
+        min-height: 27.5rem;
+    }
+}
+
+.front-page-approach-step:before {
+    content: counter(approach-step, decimal-leading-zero) ".";
+    margin-bottom: var(--spacing-xxs);
+    color: var(--primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-approach-step:before {
+        font-size: 1.75rem;
+    }
+}
+
+.front-page-approach-step h3 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-approach-step h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.front-page-approach-step-text {
+    --content-spacing: var(--spacing-xs);
+    --content-color: var(--dove);
+
+    margin-top: var(--spacing-sm);
+    font-size: 0.875rem;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-approach-step-text {
+        margin-top: auto;
+        padding-top: var(--spacing-sm);
+        font-size: 1rem;
+    }
+}

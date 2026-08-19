@@ -36,6 +36,7 @@ Text Domain: vox-aedificatoris
 @import "./assets/css/elements/buttons.css";
 @import "./assets/css/elements/columns.css";
 @import "./assets/css/elements/containers.css";
+@import "./assets/css/elements/eyebrows.css";
 @import "./assets/css/elements/footer.css";
 @import "./assets/css/elements/forms.css";
 @import "./assets/css/elements/grids.css";
@@ -51,6 +52,8 @@ Text Domain: vox-aedificatoris
 /* #Template Parts
 --------------------------------------------------------------- */
 
+@import "./assets/css/template-parts/front-page-approach.css";
+@import "./assets/css/template-parts/front-page-clients.css";
 @import "./assets/css/template-parts/front-page-key-figures.css";
 @import "./assets/css/template-parts/item-post.css";
 @import "./assets/css/template-parts/item-realisation.css";

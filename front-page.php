@@ -8,6 +8,8 @@
         </div>
     </section>
 
+    <?php get_template_part('template-parts/front-page-approach'); ?>
+
     <?php if (trim(get_the_content())) : ?>
         <!-- Content -->
         <section id="content-<?= esc_attr(get_the_ID()); ?>" class="front-page-content">
@@ -18,6 +20,7 @@
     <?php endif; ?>
 
     <?php get_template_part('template-parts/front-page-key-figures'); ?>
+    <?php get_template_part('template-parts/front-page-clients'); ?>
 <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

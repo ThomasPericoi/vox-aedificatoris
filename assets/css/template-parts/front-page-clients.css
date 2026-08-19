@@ -1,0 +1,43 @@
+/* #Front Page Clients
+--------------------------------------------------------------- */
+.front-page-clients {
+    overflow: hidden;
+}
+
+.front-page-clients-header {
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.front-page-clients-header h2 {
+    max-width: 18rem;
+    margin: var(--spacing-xs) auto 0;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-clients-header h2 {
+        max-width: none;
+    }
+}
+
+.front-page-clients-slider {
+    overflow: visible;
+}
+
+.front-page-client {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    margin: 0;
+    padding: var(--spacing-xs);
+    background-color: var(--wild-sand);
+    border-radius: 0.375rem;
+}
+
+.front-page-client-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

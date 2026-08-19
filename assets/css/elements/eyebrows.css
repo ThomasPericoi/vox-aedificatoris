@@ -1,0 +1,16 @@
+/* #Eyebrows
+--------------------------------------------------------------- */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.75rem;
+    margin: 0;
+    padding: 0.25rem 0.75rem;
+    color: var(--primary);
+    background-color: var(--hippie-16);
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+}

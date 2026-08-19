@@ -217,9 +217,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Initialize the clients sliders.
+    const initClientsSliders = () => {
+        if (typeof window.Swiper !== 'function') {
+            return;
+        }
+
+        document.querySelectorAll('.front-page-clients-slider').forEach((slider) => {
+            const slides = slider.querySelectorAll('.swiper-slide');
+
+            new window.Swiper(slider, {
+                slidesPerView: 2,
+                spaceBetween: 16,
+                centeredSlides: true,
+                loop: slides.length > 2,
+                grabCursor: true,
+                centerInsufficientSlides: true,
+                watchOverflow: true,
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 3.5,
+                        spaceBetween: 32,
+                        centeredSlides: false,
+                    },
+                    992: {
+                        slidesPerView: 5,
+                        spaceBetween: 90,
+                        centeredSlides: false,
+                    },
+                },
+            });
+        });
+    };
+
     initLayoutVariables();
     initSignature();
     initRevealOnScroll();
     initOrderedLists();
     initMenu();
+    initClientsSliders();
 });
