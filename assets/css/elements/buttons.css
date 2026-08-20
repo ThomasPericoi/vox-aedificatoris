@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-xxs);
 }
 
 .btn {
@@ -19,8 +19,9 @@
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
+    text-transform: uppercase;
     background-color: var(--primary);
-    border: 1px solid var(--primary);
+    border: 2px solid var(--primary);
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: color var(--transition-timing) var(--transition-duration), background-color var(--transition-timing) var(--transition-duration);
@@ -30,4 +31,35 @@
 .btn:focus-visible {
     color: var(--primary);
     background-color: var(--white);
+}
+
+/* Inline */
+.inline-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xxs);
+    color: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    padding-bottom: 0.35em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid currentColor;
+}
+
+.inline-link:after {
+    content: "";
+    width: 0.9375rem;
+    height: 0.75rem;
+    flex: 0 0 auto;
+    background: currentColor;
+    -webkit-mask: url("../../medias/icons/arrow-right.svg") center / contain no-repeat;
+    mask: url("../../medias/icons/arrow-right.svg") center / contain no-repeat;
+    transition: translate var(--transition-duration) var(--transition-timing);
+}
+
+.inline-link:hover:after,
+.inline-link:focus-visible:after {
+    translate: 0.25rem 0;
 }

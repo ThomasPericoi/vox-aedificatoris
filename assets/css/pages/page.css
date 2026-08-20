@@ -1,2 +1,9 @@
 /* #Page
 --------------------------------------------------------------- */
+#main > .page-hero-has-content {
+    padding-bottom: 0;
+}
+
+#main > .page-content {
+    padding-top: var(--spacing-md);
+}

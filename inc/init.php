@@ -13,10 +13,10 @@ function vox_setup_theme()
     add_theme_support('align-wide');
     add_theme_support('responsive-embeds');
     add_theme_support('custom-logo', array(
-        'height'      => 100,
-        'width'       => 400,
+        'height' => 100,
+        'width' => 400,
         'flex-height' => true,
-        'flex-width'  => true,
+        'flex-width' => true,
         'header-text' => array('site-title', 'site-description'),
     ));
     add_theme_support(
@@ -215,10 +215,12 @@ add_action('wp_enqueue_scripts', 'vox_enqueue_theme_stylesheets');
 function vox_enqueue_theme_scripts()
 {
     wp_register_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array(), null, true);
+    wp_register_script('ascii-printer', get_template_directory_uri() . '/assets/js/ascii-printer.min.js', array(), vox_get_asset_version('assets/js/ascii-printer.min.js'), true);
     wp_register_script('script', get_template_directory_uri() . '/assets/js/main.js', array(), vox_get_asset_version('assets/js/main.js'), true);
     if (is_front_page()) {
         wp_enqueue_script('swiper');
     }
+    wp_enqueue_script('ascii-printer');
     wp_enqueue_script('script');
 }
 add_action('wp_enqueue_scripts', 'vox_enqueue_theme_scripts');

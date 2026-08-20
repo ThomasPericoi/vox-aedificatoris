@@ -8,7 +8,7 @@ $content = trim(get_the_content());
 ?>
 
 <!-- Hero -->
-<section id="hero-<?= esc_attr($post_id); ?>" class="hero hero-simple">
+<section id="hero-<?= esc_attr($post_id); ?>" class="hero hero-simple page-hero<?= $content ? ' page-hero-has-content' : ''; ?>">
     <div class="container container-sm">
         <h1><?= esc_html(get_the_title()); ?></h1>
         <?php if (has_post_thumbnail()) : ?>
@@ -21,7 +21,7 @@ $content = trim(get_the_content());
 
 <?php if ($content) : ?>
     <!-- Content -->
-    <section id="content-<?= esc_attr($post_id); ?>">
+    <section id="content-<?= esc_attr($post_id); ?>" class="page-content">
         <div class="container container-sm formatted">
             <?php the_content(); ?>
             <?php

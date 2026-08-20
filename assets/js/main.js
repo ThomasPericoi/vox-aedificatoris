@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    let layoutTicking = false;
     // Batch layout variable updates into the next animation frame.
+    let layoutTicking = false;
     const requestLayoutVariablesUpdate = () => {
         if (layoutTicking) {
             return;
@@ -125,6 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Print the theme signature in the console.
     const initSignature = () => {
         console.info('This theme was made by Thomas Pericoi - https://thomaspericoi.com/');
+
+        if (window.AsciiPrinter && typeof window.AsciiPrinter.printRandom === 'function') {
+            window.AsciiPrinter.printRandom();
+        }
     };
 
     // Reveal main sections progressively while keeping fallbacks for old browsers.
@@ -254,10 +258,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Toggle each mission offer from either of its controls.
+    const initMissionOffers = () => {
+        document.querySelectorAll('.front-page-mission').forEach((mission) => {
+            const toggles = mission.querySelectorAll('.front-page-mission-icon-toggle, .front-page-mission-offer-toggle');
+            const panelId = toggles[0]?.getAttribute('aria-controls');
+            const panel = panelId ? document.getElementById(panelId) : null;
+
+            if (!toggles.length || !panel) {
+                return;
+            }
+
+            const setOfferState = (opened) => {
+                panel.hidden = !opened;
+                toggles.forEach((toggle) => toggle.setAttribute('aria-expanded', opened ? 'true' : 'false'));
+            };
+
+            toggles.forEach((toggle) => {
+                toggle.addEventListener('click', () => {
+                    setOfferState(toggle.getAttribute('aria-expanded') !== 'true');
+                });
+            });
+        });
+    };
+
     initLayoutVariables();
     initSignature();
     initRevealOnScroll();
     initOrderedLists();
     initMenu();
     initClientsSliders();
+    initMissionOffers();
 });

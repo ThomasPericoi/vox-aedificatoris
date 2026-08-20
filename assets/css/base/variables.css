@@ -22,7 +22,7 @@
     --body: "Manrope", sans-serif;
 
     /* Radius */
-    --border-radius: 0;
+    --border-radius: 12px;
 
     /* Spacings */
     --header-height: 87px;
