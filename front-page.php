@@ -17,6 +17,8 @@
 
     <?php get_template_part('template-parts/front-page-key-figures'); ?>
     <?php get_template_part('template-parts/front-page-clients'); ?>
+    <?php get_template_part('template-parts/front-page-testimonials'); ?>
+    <?php get_template_part('template-parts/front-page-contact'); ?>
 <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

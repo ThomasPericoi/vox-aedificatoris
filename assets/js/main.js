@@ -239,6 +239,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Initialize the testimonials slider.
+    const initTestimonialsSliders = () => {
+        if (typeof window.Swiper !== 'function') {
+            return;
+        }
+
+        document.querySelectorAll('.front-page-testimonials-slider').forEach((slider) => {
+            const slides = slider.querySelectorAll('.swiper-slide');
+            const slidesCount = slides.length;
+
+            if (!slidesCount) {
+                return;
+            }
+
+            new window.Swiper(slider, {
+                slidesPerView: slidesCount > 1 ? 1.1 : 1,
+                spaceBetween: 16,
+                grabCursor: slidesCount > 1,
+                watchOverflow: true,
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: slidesCount > 1 ? 1.5 : 1,
+                    },
+                    992: {
+                        slidesPerView: slidesCount > 2 ? 2.05 : slidesCount,
+                    },
+                },
+            });
+        });
+    };
+
     // Toggle each mission offer from either of its controls.
     const initMissionOffers = () => {
         document.querySelectorAll('.front-page-mission').forEach((mission) => {
@@ -270,5 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroVideos();
     initMenu();
     initClientsSliders();
+    initTestimonialsSliders();
     initMissionOffers();
 });

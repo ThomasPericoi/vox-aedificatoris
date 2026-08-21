@@ -1,0 +1,127 @@
+/* #Front Page Contact
+--------------------------------------------------------------- */
+.front-page-contact-inner {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-contact-inner {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        align-items: start;
+        gap: var(--spacing-lg);
+    }
+}
+
+.front-page-contact-header h2 {
+    max-width: 28rem;
+    margin: var(--spacing-xs) 0 0;
+}
+
+.front-page-contact-text {
+    --content-spacing: var(--spacing-xs);
+
+    max-width: 29rem;
+    margin-top: var(--spacing-xs);
+}
+
+.front-page-contact-form form {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-sm) 2rem;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-contact-form form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: var(--spacing-md);
+    }
+}
+
+.front-page-contact-form label {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-contact-form label:nth-of-type(n+3) {
+        grid-column: 1 / -1;
+    }
+}
+
+.front-page-contact-form .wpcf7-form-control-wrap {
+    display: block;
+}
+
+.front-page-contact-form input[type="text"],
+.front-page-contact-form input[type="email"],
+.front-page-contact-form input[type="tel"],
+.front-page-contact-form input[type="url"],
+.front-page-contact-form textarea {
+    padding: var(--spacing-xxs) 0;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--dove);
+    border-radius: 0;
+}
+
+.front-page-contact-form textarea {
+    min-height: 6rem;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-contact-form textarea {
+        min-height: 7rem;
+    }
+}
+
+.front-page-contact-form .wpcf7-form-control-wrap[data-name="contact-consent"],
+.front-page-contact-form input[type="submit"],
+.front-page-contact-form .wpcf7-spinner,
+.front-page-contact-form .wpcf7-response-output {
+    grid-column: 1 / -1;
+}
+
+.front-page-contact-form .wpcf7-acceptance label {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xxs);
+    cursor: pointer;
+}
+
+.front-page-contact-form .wpcf7-list-item-label {
+    font-size: 0.875rem;
+}
+
+.front-page-contact-form input[type="checkbox"] {
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: 0;
+}
+
+.front-page-contact-form input[type="submit"] {
+    width: fit-content;
+    min-width: 15rem;
+    padding-right: 3rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='12' viewBox='0 0 15 12'%3E%3Cpath fill='%23fff' d='m8.753.249 5.063 5.063a.845.845 0 0 1 0 1.195l-5.063 5.062a.845.845 0 0 1-1.195-1.195l3.622-3.622H.844a.844.844 0 0 1 0-1.687H11.18L7.557 1.443A.845.845 0 0 1 8.753.249Z'/%3E%3C/svg%3E");
+    background-position: right var(--spacing-xs) center;
+    background-repeat: no-repeat;
+}
+
+.front-page-contact-form input[type="submit"]:hover,
+.front-page-contact-form input[type="submit"]:focus-visible {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='12' viewBox='0 0 15 12'%3E%3Cpath fill='%23111212' d='m8.753.249 5.063 5.063a.845.845 0 0 1 0 1.195l-5.063 5.062a.845.845 0 0 1-1.195-1.195l3.622-3.622H.844a.844.844 0 0 1 0-1.687H11.18L7.557 1.443A.845.845 0 0 1 8.753.249Z'/%3E%3C/svg%3E");
+}
+
+.front-page-contact-form .wpcf7-spinner {
+    margin: 0;
+    position: absolute;
+    bottom: 0.65rem;
+    left: 16rem;
+}
+
+.front-page-contact-form .wpcf7-response-output {
+    margin: 0;
+}

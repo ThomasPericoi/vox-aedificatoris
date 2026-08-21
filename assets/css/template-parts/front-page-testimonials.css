@@ -1,0 +1,105 @@
+/* #Front Page Testimonials
+--------------------------------------------------------------- */
+.front-page-testimonials {
+    background-color: var(--wild-sand);
+    overflow: hidden;
+}
+
+.front-page-testimonials-header {
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.front-page-testimonials-header h2 {
+    max-width: 20rem;
+    margin: var(--spacing-xs) auto 0;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-testimonials-header h2 {
+        max-width: none;
+    }
+}
+
+.front-page-testimonials-slider {
+    padding-right: var(--spacing-sm);
+    padding-left: var(--spacing-sm);
+    overflow: visible;
+}
+
+.front-page-testimonial {
+    height: auto;
+    margin: 0;
+    padding: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-testimonial {
+        min-height: 19.5rem;
+        padding: 2.5rem;
+    }
+}
+
+.front-page-testimonial h3 {
+    margin: 0 0 var(--spacing-xs);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.front-page-testimonial-text {
+    --content-spacing: var(--spacing-xs);
+}
+
+.front-page-testimonial-author {
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    gap: var(--spacing-xxs);
+}
+
+.front-page-testimonial-author.has-photo {
+    grid-template-columns: 5rem minmax(0, 1fr);
+}
+
+.front-page-testimonial-photo {
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.front-page-testimonial-author-content cite {
+    display: block;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.front-page-testimonial-author-content p {
+    margin: 0;
+    color: var(--dove);
+    font-size: 0.875rem;
+}
+
+.front-page-testimonial-logo {
+    width: auto;
+    max-width: 5rem;
+    max-height: 2rem;
+    margin-top: var(--spacing-xxs);
+    display: block;
+    object-fit: contain;
+    object-position: left center;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-testimonial-logo {
+        max-width: 8rem;
+    }
+}
