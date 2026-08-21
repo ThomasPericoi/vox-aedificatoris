@@ -3,6 +3,208 @@
     "title": "Page type - Page d’accueil",
     "fields": [
         {
+            "key": "field_vox_home_hero_tab",
+            "label": "1) Hero",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_vox_home_hero_media_type",
+            "label": "Type de média",
+            "name": "home_hero_media_type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image": "Image",
+                "video": "Vidéo"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_vox_home_hero_image",
+            "label": "Image de fond",
+            "name": "home_hero_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_vox_home_hero_media_type",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "large"
+        },
+        {
+            "key": "field_vox_home_hero_video",
+            "label": "Vidéo de fond",
+            "name": "home_hero_video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "La vidéo est diffusée sans son et en boucle.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_vox_home_hero_media_type",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "mp4,webm",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_vox_home_hero_title",
+            "label": "Titre",
+            "name": "home_hero_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_vox_home_hero_card_title",
+            "label": "Titre du cartouche",
+            "name": "home_hero_card_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les sauts à la ligne sont conservés.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_vox_home_hero_card_text",
+            "label": "Texte du cartouche",
+            "name": "home_hero_card_text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
+            "key": "field_vox_home_hero_primary_cta",
+            "label": "CTA principal",
+            "name": "home_hero_primary_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_vox_home_hero_secondary_cta",
+            "label": "CTA secondaire",
+            "name": "home_hero_secondary_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 1
+        },
+        {
             "key": "field_vox_home_approach_tab",
             "label": "2) Approche",
             "name": "",
@@ -347,11 +549,11 @@
                     "parent_repeater": "field_vox_home_missions"
                 },
                 {
-                    "key": "field_vox_home_mission_cta",
-                    "label": "CTA",
-                    "name": "cta",
+                    "key": "field_6a870eba468e7",
+                    "label": "Introduction",
+                    "name": "introduction",
                     "aria-label": "",
-                    "type": "link",
+                    "type": "text",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
@@ -360,8 +562,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "default_value": "",
+                    "maxlength": "",
                     "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_vox_home_missions"
                 },
                 {
@@ -387,8 +593,26 @@
                     "parent_repeater": "field_vox_home_missions"
                 },
                 {
+                    "key": "field_vox_home_mission_cta",
+                    "label": "CTA",
+                    "name": "cta",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 1,
+                    "parent_repeater": "field_vox_home_missions"
+                },
+                {
                     "key": "field_vox_home_mission_offers",
-                    "label": "Offre",
+                    "label": "Offres",
                     "name": "offers",
                     "aria-label": "",
                     "type": "repeater",
@@ -401,12 +625,12 @@
                         "id": ""
                     },
                     "layout": "table",
-                    "pagination": 0,
                     "min": 1,
                     "max": 0,
                     "collapsed": "",
                     "button_label": "Ajouter une offre",
                     "rows_per_page": 20,
+                    "parent_repeater": "field_vox_home_missions",
                     "sub_fields": [
                         {
                             "key": "field_vox_home_mission_offer_title",
@@ -430,8 +654,7 @@
                             "append": "",
                             "parent_repeater": "field_vox_home_mission_offers"
                         }
-                    ],
-                    "parent_repeater": "field_vox_home_missions"
+                    ]
                 }
             ]
         },
@@ -654,5 +877,5 @@
     "display_title": "Options de la page d'accueil",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1787210098
+    "modified": 1787298211
 }

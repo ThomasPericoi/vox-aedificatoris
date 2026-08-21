@@ -78,11 +78,6 @@
     text-underline-offset: 0.15em;
 }
 
-#main-footer .footer-contact a:hover,
-#main-footer .footer-contact a:focus-visible {
-    text-decoration-thickness: 2px;
-}
-
 #main-footer .footer-title {
     margin-bottom: var(--spacing-sm);
     font-size: 1rem;
@@ -108,7 +103,7 @@
 
 #main-footer .menu-footer a:hover,
 #main-footer .menu-footer a:focus-visible,
-#main-footer .menu-footer .current-menu-item > a,
+#main-footer .menu-footer .current-menu-item>a,
 #main-footer .menu-footer a[aria-current="page"] {
     text-decoration: underline;
 }

@@ -26,7 +26,12 @@ if (!$clients) {
     <?php if ($clients) : ?>
         <div class="front-page-clients-slider swiper container container-lg">
             <div class="swiper-wrapper">
-                <?php foreach ($clients as $client) : ?>
+                <?php foreach ($clients as $client) :
+                    if (empty($client['logo'])) {
+                        continue;
+                    }
+                    ?>
+
                     <figure class="front-page-client swiper-slide">
                         <?= wp_get_attachment_image($client['logo'], 'medium', false, array('class' => 'front-page-client-logo')); ?>
                     </figure>

@@ -1,12 +1,7 @@
 <?php get_header(); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <!-- Hero -->
-    <section id="hero-<?= esc_attr(get_the_ID()); ?>" class="hero hero-simple">
-        <div class="container container-sm">
-            <h1><?= esc_html(get_the_title()); ?></h1>
-        </div>
-    </section>
+    <?php get_template_part('template-parts/front-page-hero'); ?>
 
     <?php get_template_part('template-parts/front-page-approach'); ?>
     <?php get_template_part('template-parts/front-page-missions'); ?>

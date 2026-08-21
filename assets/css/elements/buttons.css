@@ -9,28 +9,59 @@
 
 .btn {
     min-height: 45px;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-xs);
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: var(--white);
     font-family: var(--body);
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
-    background-color: var(--primary);
-    border: 2px solid var(--primary);
+    border: 2px solid transparent;
     border-radius: var(--border-radius);
     cursor: pointer;
-    transition: color var(--transition-timing) var(--transition-duration), background-color var(--transition-timing) var(--transition-duration);
+    transition: color var(--transition-timing) var(--transition-duration), background-color var(--transition-timing) var(--transition-duration), border-color var(--transition-timing) var(--transition-duration);
 }
 
-.btn:hover,
-.btn:focus-visible {
-    color: var(--primary);
-    background-color: var(--white);
+/* Primary */
+.btn-primary {
+    color: var(--white);
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    color: var(--black);
+    background-color: transparent;
+    border-color: var(--black);
+}
+
+/* Black */
+.btn-black {
+    color: var(--white);
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+.btn-black:hover,
+.btn-black:focus-visible {
+    color: var(--black);
+    background-color: transparent;
+}
+
+/* Icon */
+.btn-icon-arrow-right:after {
+    content: "";
+    width: 0.9375rem;
+    height: 0.75rem;
+    margin-left: var(--spacing-xs);
+    flex: 0 0 auto;
+    background: currentColor;
+    -webkit-mask: url("../../medias/icons/arrow-right.svg") center / contain no-repeat;
+    mask: url("../../medias/icons/arrow-right.svg") center / contain no-repeat;
 }
 
 /* Inline */

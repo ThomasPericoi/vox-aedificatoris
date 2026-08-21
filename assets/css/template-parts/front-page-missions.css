@@ -161,18 +161,6 @@
     --content-spacing: var(--spacing-sm);
 }
 
-.front-page-mission-offer-toggle {
-    color: var(--white);
-    background-color: var(--black);
-    border-color: var(--black);
-}
-
-.front-page-mission-offer-toggle:hover,
-.front-page-mission-offer-toggle:focus-visible {
-    color: var(--black);
-    background-color: transparent;
-}
-
 .front-page-mission-offer-toggle-icon {
     width: 0.875rem;
     height: 0.875rem;
