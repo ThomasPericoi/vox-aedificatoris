@@ -28,7 +28,7 @@
                             'menu_class' => 'menu menu-header',
                             'items_wrap' => '<ul id="header-menu" class="%2$s">%3$s</ul>',
                             'container' => false,
-                            'depth' => 3,
+                            'depth' => 1,
                             'fallback_cb' => false,
                         )); ?>
                     </nav>

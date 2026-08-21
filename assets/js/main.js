@@ -20,22 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         element.setAttribute('aria-hidden', enabled ? 'false' : 'true');
     };
 
-    // Close every opened submenu and reset its accessible state.
-    const closeSubMenus = () => {
-        document.querySelectorAll(".menu-item-has-children[data-opened='true']").forEach((item) => {
-            item.dataset.opened = 'false';
-            item.classList.remove('active');
-            item.querySelector(':scope > a')?.setAttribute('aria-expanded', 'false');
-        });
-    };
-
     // Open or close the main navigation and protect the rest of the page.
     const setMenuState = (opened) => {
         body.classList.toggle('js-menuOpened', opened);
-
-        if (!opened) {
-            closeSubMenus();
-        }
 
         if (menuToggle) {
             menuToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
@@ -177,7 +164,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Wire the responsive menu and mobile submenu behaviour.
+    // Stop decorative hero videos when reduced motion is requested.
+    const initHeroVideos = () => {
+        if (!reduceMotionQuery.matches) {
+            return;
+        }
+
+        document.querySelectorAll('.front-page-hero video[autoplay]').forEach((video) => {
+            video.removeAttribute('autoplay');
+            video.pause();
+        });
+    };
+
+    // Wire the responsive menu behaviour.
     const initMenu = () => {
         if (!nav || !menuToggle) {
             return;
@@ -189,35 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
             setMenuState(!body.classList.contains('js-menuOpened'));
         });
 
+        nav.addEventListener('click', (event) => {
+            if (!desktopQuery.matches && event.target.closest('a')) {
+                closeMenu();
+            }
+        });
+
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && body.classList.contains('js-menuOpened')) {
                 closeMenu();
                 menuToggle.focus();
             }
-        });
-
-        document.querySelectorAll('.menu-item-has-children').forEach((item) => {
-            const link = item.querySelector(':scope > a');
-
-            if (!link) {
-                return;
-            }
-
-            item.dataset.opened = 'false';
-            link.setAttribute('aria-haspopup', 'true');
-            link.setAttribute('aria-expanded', 'false');
-
-            link.addEventListener('click', (event) => {
-                if (desktopQuery.matches || item.dataset.opened === 'true') {
-                    return;
-                }
-
-                event.preventDefault();
-                closeSubMenus();
-                item.dataset.opened = 'true';
-                item.classList.add('active');
-                link.setAttribute('aria-expanded', 'true');
-            });
         });
     };
 
@@ -286,6 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSignature();
     initRevealOnScroll();
     initOrderedLists();
+    initHeroVideos();
     initMenu();
     initClientsSliders();
     initMissionOffers();

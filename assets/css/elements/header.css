@@ -7,8 +7,7 @@ body.js-menuOpened {
 #header {
     width: 100%;
     padding: var(--spacing-xs) 0;
-    position: fixed;
-    top: 0;
+    position: relative;
     z-index: 99;
     background-color: var(--white);
 }
@@ -19,8 +18,20 @@ body.js-menuOpened {
     }
 }
 
-.admin-bar #header {
+.home #header {
+    position: absolute;
+    top: 0;
+    color: var(--white);
+    background-color: transparent;
+}
+
+.admin-bar.home #header {
     top: var(--admin-bar-visible-height, var(--wp-admin--admin-bar--height, 32px));
+}
+
+.js-menuOpened.home #header {
+    color: var(--black);
+    background-color: var(--white);
 }
 
 #header .inner-header {
@@ -38,20 +49,29 @@ body.js-menuOpened {
 }
 
 #header .custom-logo {
-    width: auto;
-    max-width: 220px;
+    width: 100%;
+    max-width: 295px;
     max-height: 55px;
     display: block;
+    filter: brightness(0);
+}
+
+.home:not(.js-menuOpened) #header .custom-logo {
+    filter: brightness(0) invert(1);
+}
+
+.home:not(.js-menuOpened) #header a:focus-visible,
+.home:not(.js-menuOpened) #header button:focus-visible {
+    outline-color: var(--white);
 }
 
 #header .custom-logo-link,
 #header .logo-link {
     display: inline-block;
-    flex-shrink: 0;
 }
 
 #header .logo-link {
-    color: var(--content-color);
+    color: inherit;
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
@@ -59,10 +79,10 @@ body.js-menuOpened {
 
 #header .nav-wrapper {
     width: 100%;
-    height: calc(var(--viewport-height, 100vh) - var(--header-height));
+    height: calc(var(--viewport-height, 100vh) - var(--header-height) - var(--admin-bar-visible-height, 0px));
     padding: var(--spacing-sm);
     position: fixed;
-    top: var(--header-height);
+    top: calc(var(--header-height) + var(--admin-bar-visible-height, 0px));
     right: 0;
     z-index: 25;
     overflow-y: auto;
@@ -81,6 +101,14 @@ body.js-menuOpened {
         overflow: visible;
         transform: none;
     }
+
+    .home #header .nav-wrapper {
+        padding: 0.25rem;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: var(--border-radius);
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+    }
 }
 
 .js-menuOpened #header .nav-wrapper {
@@ -95,6 +123,7 @@ body.js-menuOpened {
 
 @media screen and (min-width: 1200px) {
     .menu-header {
+        padding-left: 2rem;
         flex-direction: row;
         align-items: center;
     }
@@ -105,17 +134,37 @@ body.js-menuOpened {
     display: flex;
     align-items: center;
     color: var(--content-color);
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
-    text-underline-offset: 0.2em;
+    transition: text-shadow var(--transition-duration) var(--transition-timing);
 }
 
 .menu-header a:hover,
 .menu-header a:focus-visible,
-.menu-header .current-menu-item > a,
-.menu-header .current-menu-parent > a,
+.menu-header .current-menu-item>a,
 .menu-header a[aria-current="page"] {
-    text-decoration: underline;
+    text-shadow: 0.4px 0 currentColor, -0.4px 0 currentColor;
+}
+
+.menu-header>li:not(.menu-item-button) {
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--hippie-16);
+}
+
+@media screen and (min-width: 1200px) {
+    .menu-header>li:not(.menu-item-button) {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+}
+
+.menu-header .menu-item-button>a {
+    width: fit-content;
+    min-height: 44px;
+    padding: 0.5rem var(--spacing-sm);
+    color: var(--white);
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
 }
 
 .menu-toggle-col {
@@ -149,6 +198,10 @@ body.js-menuOpened {
     cursor: pointer;
 }
 
+.home:not(.js-menuOpened) .menu-toggle {
+    color: var(--white);
+}
+
 .menu-toggle-open,
 .menu-toggle-open:before,
 .menu-toggle-open:after,
@@ -157,7 +210,7 @@ body.js-menuOpened {
     height: 2px;
     position: absolute;
     left: 0;
-    background-color: var(--content-color);
+    background-color: currentColor;
     transition: transform var(--transition-timing) var(--transition-duration), opacity var(--transition-timing) var(--transition-duration);
 }
 
