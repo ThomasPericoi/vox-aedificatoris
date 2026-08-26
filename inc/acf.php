@@ -2,6 +2,14 @@
 /* ACF
 --------------------------------------------------------------- */
 
+// Keep the front-end available if the required ACF Pro plugin is disabled.
+if (!function_exists('get_field')) {
+    function get_field($selector, $post_id = false, $format_value = true)
+    {
+        return false;
+    }
+}
+
 // Save ACF local JSON inside the theme.
 function vox_save_acf_groups_json($path)
 {
@@ -34,13 +42,13 @@ function vox_name_acf_groups_json($filename, $post, $load_path)
 }
 add_filter('acf/json/save_file_name', 'vox_name_acf_groups_json', 10, 3);
 
-// Warn admins when the required ACF plugin is missing.
+// Warn admins when the required ACF Pro plugin is missing.
 function vox_display_acf_missing_notice()
 {
-    if (class_exists('ACF') || !current_user_can('activate_plugins')) {
+    if ((defined('ACF_PRO') && ACF_PRO) || !current_user_can('activate_plugins')) {
         return;
     }
 
-    echo '<div class="notice notice-warning"><p>' . esc_html__('Advanced Custom Fields Pro est recommandé pour administrer les contenus personnalisés de ce thème.', 'vox-aedificatoris') . '</p></div>';
+    echo '<div class="notice notice-error"><p><strong>' . esc_html__('Advanced Custom Fields Pro est requis par le thème VOX.', 'vox-aedificatoris') . '</strong> ' . esc_html__('Activez le plugin pour administrer et afficher les contenus personnalisés.', 'vox-aedificatoris') . '</p></div>';
 }
 add_action('admin_notices', 'vox_display_acf_missing_notice');
