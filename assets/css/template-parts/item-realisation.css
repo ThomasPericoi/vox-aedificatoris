@@ -1,4 +1,100 @@
 /* #Item Realisation
 --------------------------------------------------------------- */
+.item-realisation {
+    min-width: 0;
+}
 
-/* Reserved for the realisation card design. */
+.item-realisation-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.item-realisation-media {
+    aspect-ratio: 7 / 10;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.item-realisation-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+.item-realisation-media.is-video:after {
+    content: "";
+    width: 1.5rem;
+    height: 1.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--white);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    translate: -40% -50%;
+}
+
+.item-realisation-content {
+    margin-top: var(--spacing-xxs);
+}
+
+.item-realisation-format {
+    width: fit-content;
+    margin: 0 0 var(--spacing-xxs);
+    padding: 0.1rem 0.4rem;
+    color: var(--primary);
+    font-size: 0.625rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    border: 1px solid var(--primary);
+    border-radius: 33px;
+}
+
+@media screen and (min-width: 992px) {
+    .item-realisation-format {
+        margin-bottom: var(--spacing-xs);
+    }
+}
+
+.item-realisation-title {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+@media screen and (min-width: 992px) {
+    .item-realisation-title {
+        font-size: 1.125rem;
+    }
+}
+
+.item-realisation-link:hover .item-realisation-title,
+.item-realisation-link:focus-visible .item-realisation-title {
+    text-decoration: underline;
+}
+
+.item-realisation-client {
+    margin: var(--spacing-xxs) 0;
+    color: var(--dove);
+    font-size: 0.75rem;
+}
+
+@media screen and (min-width: 992px) {
+    .item-realisation-client {
+        margin: var(--spacing-xs) 0;
+        font-size: 0.875rem;
+    }
+}
+
+.item-realisation .inline-link {
+    margin-top: var(--spacing-xxs);
+}

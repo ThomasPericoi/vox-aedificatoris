@@ -1,4 +1,33 @@
 <?php
+$taxonomy_labels = [
+    'name' => __('Catégories de réalisation', 'vox-aedificatoris'),
+    'singular_name' => __('Catégorie de réalisation', 'vox-aedificatoris'),
+    'menu_name' => __('Catégories', 'vox-aedificatoris'),
+    'all_items' => __('Toutes les catégories', 'vox-aedificatoris'),
+    'edit_item' => __('Modifier la catégorie', 'vox-aedificatoris'),
+    'view_item' => __('Voir la catégorie', 'vox-aedificatoris'),
+    'update_item' => __('Mettre à jour la catégorie', 'vox-aedificatoris'),
+    'add_new_item' => __('Ajouter une catégorie', 'vox-aedificatoris'),
+    'new_item_name' => __('Nom de la nouvelle catégorie', 'vox-aedificatoris'),
+    'search_items' => __('Rechercher des catégories', 'vox-aedificatoris'),
+    'not_found' => __('Aucune catégorie trouvée.', 'vox-aedificatoris'),
+];
+
+register_taxonomy('realisation_category', ['realisation'], [
+    'labels' => $taxonomy_labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'show_in_rest' => true,
+    'query_var' => true,
+    'rewrite' => [
+        'slug' => 'categorie-realisation',
+        'with_front' => false,
+    ],
+]);
+
 $labels = [
     'name' => __('Réalisations', 'vox-aedificatoris'),
     'singular_name' => __('Réalisation', 'vox-aedificatoris'),
@@ -37,7 +66,7 @@ register_post_type('realisation', [
         'revisions',
         'page-attributes',
     ],
-    'taxonomies' => [],
+    'taxonomies' => ['realisation_category'],
     'has_archive' => 'realisations',
     'rewrite' => [
         'slug' => 'realisations',

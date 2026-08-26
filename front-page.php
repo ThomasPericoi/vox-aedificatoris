@@ -5,6 +5,7 @@
 
     <?php get_template_part('template-parts/front-page-approach'); ?>
     <?php get_template_part('template-parts/front-page-missions'); ?>
+    <?php get_template_part('template-parts/front-page-realisations'); ?>
 
     <?php if (trim(get_the_content())) : ?>
         <!-- Content -->

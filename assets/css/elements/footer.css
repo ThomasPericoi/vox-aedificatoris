@@ -102,9 +102,7 @@
 }
 
 #main-footer .menu-footer a:hover,
-#main-footer .menu-footer a:focus-visible,
-#main-footer .menu-footer .current-menu-item>a,
-#main-footer .menu-footer a[aria-current="page"] {
+#main-footer .menu-footer a:focus-visible {
     text-decoration: underline;
 }
 

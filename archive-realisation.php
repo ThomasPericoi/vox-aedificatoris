@@ -18,9 +18,7 @@
         <?php if (have_posts()) : ?>
             <div class="grid realisations">
                 <?php while (have_posts()) : the_post(); ?>
-                    <?php get_template_part('template-parts/item', 'realisation', array(
-                        'index' => $wp_query->current_post,
-                    )); ?>
+                    <?php get_template_part('template-parts/item', 'realisation'); ?>
                 <?php endwhile; ?>
             </div>
 

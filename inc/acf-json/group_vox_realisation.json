@@ -1,0 +1,132 @@
+{
+    "key": "group_vox_realisation",
+    "title": "Réalisation",
+    "fields": [
+        {
+            "key": "field_vox_realisation_format",
+            "label": "Format",
+            "name": "realisation_format",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "article": "Article",
+                "pdf": "PDF",
+                "video": "Vidéo"
+            },
+            "default_value": "article",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_vox_realisation_client",
+            "label": "Client",
+            "name": "realisation_client",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_vox_realisation_pdf",
+            "label": "Fichier PDF",
+            "name": "realisation_pdf",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_vox_realisation_format",
+                        "operator": "==",
+                        "value": "pdf"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "pdf",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_vox_realisation_video",
+            "label": "Fichier vidéo",
+            "name": "realisation_video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Formats recommandés : MP4 ou WebM.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_vox_realisation_format",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "mp4,webm",
+            "allow_in_bindings": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "realisation"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "Options de la réalisation",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1787752848
+}

@@ -50,6 +50,23 @@
     }
 }
 
+.front-page-contact-form label:has(> .wpcf7-form-control-wrap .wpcf7-validates-as-required) {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+}
+
+.front-page-contact-form label:has(> .wpcf7-form-control-wrap .wpcf7-validates-as-required):after {
+    content: "*";
+    grid-column: 2;
+    grid-row: 1;
+    color: var(--primary);
+}
+
+.front-page-contact-form label>.wpcf7-form-control-wrap {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
 .front-page-contact-form .wpcf7-form-control-wrap {
     display: block;
 }

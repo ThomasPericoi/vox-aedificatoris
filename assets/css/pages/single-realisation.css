@@ -1,2 +1,33 @@
 /* #Single Realisation
 --------------------------------------------------------------- */
+.realisation-single-client {
+    margin: 0;
+    color: var(--dove);
+}
+
+.realisation-pdf-viewer iframe {
+    width: 100%;
+    height: 70svh;
+    min-height: 32rem;
+    display: block;
+    border: 0;
+}
+
+.realisation-pdf-viewer .btn {
+    margin-top: var(--spacing-sm);
+}
+
+.realisation-single-video {
+    width: 100%;
+    display: block;
+    background-color: var(--black);
+}
+
+.realisation-single-body {
+    max-width: 62.5rem;
+    margin: var(--spacing-md) auto 0;
+}
+
+.realisation-single-body:first-child {
+    margin-top: 0;
+}

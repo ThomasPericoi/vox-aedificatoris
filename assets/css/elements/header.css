@@ -140,9 +140,7 @@ body.js-menuOpened {
 }
 
 .menu-header a:hover,
-.menu-header a:focus-visible,
-.menu-header .current-menu-item>a,
-.menu-header a[aria-current="page"] {
+.menu-header a:focus-visible {
     text-shadow: 0.4px 0 currentColor, -0.4px 0 currentColor;
 }
 

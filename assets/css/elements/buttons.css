@@ -79,6 +79,10 @@
     border-bottom: 2px solid currentColor;
 }
 
+.inline-link-primary {
+    color: var(--primary);
+}
+
 .inline-link:after {
     content: "";
     width: 0.9375rem;

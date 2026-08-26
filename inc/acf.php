@@ -23,6 +23,7 @@ function vox_name_acf_groups_json($filename, $post, $load_path)
     $filenames = array(
         'group_page_front_page' => 'group_page_front_page',
         'group_theme_options_footer' => 'group_theme_options_footer',
+        'group_vox_realisation' => 'group_vox_realisation',
     );
 
     if (!empty($post['key']) && !empty($filenames[$post['key']])) {
