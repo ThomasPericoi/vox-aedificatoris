@@ -92,22 +92,39 @@ $realisations_categories = get_terms([
     <?php if ($realisations_query->max_num_pages > 1):
         $pagination_base = add_query_arg('realisations-page', 999999999, remove_query_arg('realisations-page'));
         $pagination_base = str_replace('999999999', '%#%', esc_url($pagination_base));
+        $previous_page_url = $realisations_page > 1
+            ? add_query_arg('realisations-page', $realisations_page - 1, remove_query_arg('realisations-page')) . '#front-page-realisations'
+            : '';
+        $next_page_url = $realisations_page < $realisations_query->max_num_pages
+            ? add_query_arg('realisations-page', $realisations_page + 1, remove_query_arg('realisations-page')) . '#front-page-realisations'
+            : '';
         $pagination_links = paginate_links([
             'base' => $pagination_base . '#front-page-realisations',
             'format' => '',
             'current' => $realisations_page,
             'total' => $realisations_query->max_num_pages,
             'type' => 'array',
-            'prev_text' => '<span class="screen-reader-text">' . esc_html__('Page précédente', 'vox-aedificatoris') . '</span>',
-            'next_text' => '<span class="screen-reader-text">' . esc_html__('Page suivante', 'vox-aedificatoris') . '</span>',
+            'prev_next' => false,
         ]);
         ?>
         <?php if ($pagination_links): ?>
             <nav class="front-page-realisations-pagination"
                 aria-label="<?= esc_attr__('Pagination des réalisations', 'vox-aedificatoris'); ?>">
+                <?php if ($previous_page_url): ?>
+                    <a class="prev page-numbers" href="<?= esc_url($previous_page_url); ?>">
+                        <span class="screen-reader-text"><?= esc_html__('Page précédente', 'vox-aedificatoris'); ?></span>
+                    </a>
+                <?php endif; ?>
+
                 <?php foreach ($pagination_links as $pagination_link): ?>
                     <?= wp_kses_post($pagination_link); ?>
                 <?php endforeach; ?>
+
+                <?php if ($next_page_url): ?>
+                    <a class="next page-numbers" href="<?= esc_url($next_page_url); ?>">
+                        <span class="screen-reader-text"><?= esc_html__('Page suivante', 'vox-aedificatoris'); ?></span>
+                    </a>
+                <?php endif; ?>
             </nav>
         <?php endif; ?>
     <?php endif; ?>

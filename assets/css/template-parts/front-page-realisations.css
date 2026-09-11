@@ -97,7 +97,8 @@
     border-radius: 50%;
 }
 
-.front-page-realisations-pagination .page-numbers.current:before {
+.front-page-realisations-pagination .page-numbers.current:not(.prev):not(.next):before,
+.front-page-realisations-pagination .page-numbers[aria-current="page"]:not(.prev):not(.next):before {
     background-color: var(--primary);
 }
 
@@ -121,8 +122,9 @@
 }
 
 .front-page-realisations-pagination .prev:before {
-    -webkit-mask: url("../../medias/icons/arrow-left.svg") center / contain no-repeat;
-    mask: url("../../medias/icons/arrow-left.svg") center / contain no-repeat;
+    transform: rotate(180deg);
+    -webkit-mask: url("../../medias/icons/arrow-right.svg") center / contain no-repeat;
+    mask: url("../../medias/icons/arrow-right.svg") center / contain no-repeat;
 }
 
 .front-page-realisations-pagination .next:before {
