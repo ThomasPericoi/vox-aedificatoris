@@ -1004,7 +1004,7 @@
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "50",
@@ -1137,6 +1137,25 @@
                     "mime_types": "",
                     "allow_in_bindings": 1,
                     "preview_size": "medium",
+                    "parent_repeater": "field_vox_home_testimonials"
+                },
+                {
+                    "key": "field_vox_home_testimonial_link",
+                    "label": "URL",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "Toute la carte redirige vers cette URL.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
                     "parent_repeater": "field_vox_home_testimonials"
                 }
             ]
@@ -1271,5 +1290,5 @@
     "display_title": "Options de la page d'accueil",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1787752848
+    "modified": 1789139830
 }

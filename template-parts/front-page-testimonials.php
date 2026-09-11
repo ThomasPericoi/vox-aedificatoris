@@ -10,7 +10,7 @@ if (!$testimonials) {
 ?>
 
 <!-- Front Page Testimonials -->
-<section id="front-page-testimonials" class="front-page-testimonials"<?= $testimonials_title ? ' aria-labelledby="front-page-testimonials-title"' : ''; ?>>
+<section id="front-page-testimonials" class="front-page-testimonials" <?= $testimonials_title ? ' aria-labelledby="front-page-testimonials-title"' : ''; ?>>
     <?php if ($testimonials_eyebrow || $testimonials_title): ?>
         <header class="front-page-testimonials-header container">
             <?php if ($testimonials_eyebrow): ?>
@@ -25,39 +25,50 @@ if (!$testimonials) {
 
     <div class="front-page-testimonials-slider swiper container">
         <div class="swiper-wrapper">
-            <?php foreach ($testimonials as $testimonial): ?>
+            <?php foreach ($testimonials as $testimonial):
+                $testimonial_url = !empty($testimonial['link']) ? $testimonial['link'] : '';
+                if (!$testimonial_url) {
+                    continue;
+                }
+                ?>
                 <blockquote class="front-page-testimonial swiper-slide">
-                    <?php if (!empty($testimonial['title'])): ?>
-                        <h3 class="h5-size"><?= esc_html($testimonial['title']); ?></h3>
-                    <?php endif; ?>
+                    <a class="front-page-testimonial-inner" href="<?= esc_url($testimonial_url); ?>"
+                        target="_blank">
 
-                    <?php if (!empty($testimonial['text'])): ?>
-                        <div class="front-page-testimonial-text formatted">
-                            <?= wp_kses_post($testimonial['text']); ?>
-                        </div>
-                    <?php endif; ?>
+                        <?php if (!empty($testimonial['title'])): ?>
+                            <h3 class="h5-size"><?= esc_html($testimonial['title']); ?></h3>
+                        <?php endif; ?>
 
-                    <?php if (!empty($testimonial['photo']) || !empty($testimonial['name']) || !empty($testimonial['position']) || !empty($testimonial['logo'])): ?>
-                        <footer class="front-page-testimonial-author<?= !empty($testimonial['photo']) ? ' has-photo' : ''; ?>">
-                            <?php if (!empty($testimonial['photo'])): ?>
-                                <?= wp_get_attachment_image($testimonial['photo'], 'thumbnail', false, array('class' => 'front-page-testimonial-photo', 'alt' => '')); ?>
-                            <?php endif; ?>
-
-                            <div class="front-page-testimonial-author-content">
-                                <?php if (!empty($testimonial['name'])): ?>
-                                    <cite><?= esc_html($testimonial['name']); ?></cite>
-                                <?php endif; ?>
-
-                                <?php if (!empty($testimonial['position'])): ?>
-                                    <p><?= esc_html($testimonial['position']); ?></p>
-                                <?php endif; ?>
-
-                                <?php if (!empty($testimonial['logo'])): ?>
-                                    <?= wp_get_attachment_image($testimonial['logo'], 'medium', false, array('class' => 'front-page-testimonial-logo')); ?>
-                                <?php endif; ?>
+                        <?php if (!empty($testimonial['text'])): ?>
+                            <div class="front-page-testimonial-text formatted">
+                                <?= wp_kses_post($testimonial['text']); ?>
                             </div>
-                        </footer>
-                    <?php endif; ?>
+                        <?php endif; ?>
+
+                        <?php if (!empty($testimonial['photo']) || !empty($testimonial['name']) || !empty($testimonial['position']) || !empty($testimonial['logo'])): ?>
+                            <footer
+                                class="front-page-testimonial-author<?= !empty($testimonial['photo']) ? ' has-photo' : ''; ?>">
+                                <?php if (!empty($testimonial['photo'])): ?>
+                                    <?= wp_get_attachment_image($testimonial['photo'], 'thumbnail', false, array('class' => 'front-page-testimonial-photo', 'alt' => '')); ?>
+                                <?php endif; ?>
+
+                                <div class="front-page-testimonial-author-content">
+                                    <?php if (!empty($testimonial['name'])): ?>
+                                        <cite><?= esc_html($testimonial['name']); ?></cite>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($testimonial['position'])): ?>
+                                        <p><?= esc_html($testimonial['position']); ?></p>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($testimonial['logo'])): ?>
+                                        <?= wp_get_attachment_image($testimonial['logo'], 'medium', false, array('class' => 'front-page-testimonial-logo')); ?>
+                                    <?php endif; ?>
+                                </div>
+                            </footer>
+                        <?php endif; ?>
+
+                    </a>
                 </blockquote>
             <?php endforeach; ?>
         </div>

@@ -30,15 +30,21 @@
 .front-page-testimonial {
     height: auto;
     margin: 0;
+}
+
+.front-page-testimonial-inner {
+    height: 100%;
     padding: var(--spacing-sm);
     display: flex;
     flex-direction: column;
+    color: inherit;
+    text-decoration: none;
     background-color: var(--white);
     border-radius: var(--border-radius);
 }
 
 @media screen and (min-width: 992px) {
-    .front-page-testimonial {
+    .front-page-testimonial-inner {
         min-height: 19.5rem;
         padding: 2.5rem;
     }
