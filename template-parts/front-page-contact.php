@@ -3,6 +3,7 @@ $post_id = get_queried_object_id();
 $contact_eyebrow = get_field('home_contact_eyebrow', $post_id);
 $contact_title = get_field('home_contact_title', $post_id);
 $contact_text = get_field('home_contact_text', $post_id);
+$contact_portrait = get_field('home_contact_portrait', $post_id);
 $contact_form_id = get_field('home_contact_form', $post_id);
 
 if (!$contact_form_id || !shortcode_exists('contact-form-7')) {
@@ -13,7 +14,7 @@ if (!$contact_form_id || !shortcode_exists('contact-form-7')) {
 <!-- Front Page Contact -->
 <section id="front-page-contact" class="front-page-contact"<?= $contact_title ? ' aria-labelledby="front-page-contact-title"' : ''; ?>>
     <div class="front-page-contact-inner container container-lg">
-        <?php if ($contact_eyebrow || $contact_title || $contact_text): ?>
+        <?php if ($contact_eyebrow || $contact_title || $contact_text || $contact_portrait): ?>
             <header class="front-page-contact-header">
                 <?php if ($contact_eyebrow): ?>
                     <p class="eyebrow"><?= esc_html($contact_eyebrow); ?></p>
@@ -26,6 +27,12 @@ if (!$contact_form_id || !shortcode_exists('contact-form-7')) {
                 <?php if ($contact_text): ?>
                     <div class="front-page-contact-text formatted">
                         <?= wp_kses_post($contact_text); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($contact_portrait): ?>
+                    <div class="front-page-contact-portrait">
+                        <?= wp_get_attachment_image($contact_portrait, 'medium_large'); ?>
                     </div>
                 <?php endif; ?>
             </header>

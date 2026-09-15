@@ -1242,6 +1242,32 @@
             "delay": 1
         },
         {
+            "key": "field_vox_home_contact_portrait",
+            "label": "Photo portrait",
+            "name": "home_contact_portrait",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "medium"
+        },
+        {
             "key": "field_vox_home_contact_form",
             "label": "Formulaire",
             "name": "home_contact_form",
@@ -1290,5 +1316,5 @@
     "display_title": "Options de la page d'accueil",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1789139830
+    "modified": 1789477728
 }

@@ -11,12 +11,12 @@
 }
 
 .item-realisation-media {
-    aspect-ratio: 7 / 10;
+    aspect-ratio: 8 / 10;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--white);
+    background-color: var(--hippie-16);
     overflow: hidden;
 }
 

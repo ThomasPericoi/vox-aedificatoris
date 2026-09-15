@@ -25,6 +25,20 @@
     margin-top: var(--spacing-xs);
 }
 
+.front-page-contact-portrait {
+    width: min(100%, 16rem);
+    margin-top: var(--spacing-sm);
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.front-page-contact-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .front-page-contact-form form {
     position: relative;
     display: grid;
